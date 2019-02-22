@@ -41,6 +41,18 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
+@app.route("/")
+def welcome():
+    """List all available api routes."""
+    return (
+        f"Available Routes:<br/>"
+        f"/api/v1.0/stations<br/>"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/<start>"
+        f"/api/v1.0/<start>/<end>"
+    )
+
+
 @app.route("/api/v1.0/precipitation")
 def percipitation():
 
